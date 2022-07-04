@@ -2,18 +2,35 @@
 
 class Pizza extends Product
 {
-    private ?string $topping1 = null;
+    private string $topping1;
     private ?string $topping2 = null;
     private ?string $topping3 = null;
     private ?string $topping4 = null;
 
-    public function __construct(float $price, ?string $topping1 = null, ?string $topping2 = null, ?string $topping3 = null, ?string $topping4 = null)
+    public function __construct(?string $topping1, ?string $topping2 = null, ?string $topping3 = null, ?string $topping4 = null)
     {
-        $this->price = $price;
+        $price = 5.00;
         $this->topping1 = $topping1;
-        $this->topping2 = $topping2;
-        $this->topping3 = $topping3;
-        $this->topping4 = $topping4;
+
+        if($topping2 !== null)
+        {
+            $this->topping2 = $topping2;
+            $price += 1;
+        }
+
+        if($topping3 !== null )
+        {
+            $this->topping3 = $topping3;
+            $price += 1;
+        }
+
+        if($topping4 !== null)
+        {
+            $this->topping4 = $topping4;
+            $price += 1;
+        }
+
+        $this->price = $price;
     }
 
     /**
@@ -33,17 +50,17 @@ class Pizza extends Product
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getTopping1(): ?string
+    public function getTopping1(): string
     {
         return $this->topping1;
     }
 
     /**
-     * @param string|null $topping1
+     * @param string $topping1
      */
-    public function setTopping1(?string $topping1): void
+    public function setTopping1(string $topping1): void
     {
         $this->topping1 = $topping1;
     }

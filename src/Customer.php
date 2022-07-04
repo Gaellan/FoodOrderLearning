@@ -67,9 +67,16 @@ class Customer
         echo "Je suis " . $this->firstName . " " . $this->lastName . " et j'ai " . $this->age . " ans. <br/> <br/>";
     }
 
-    public function order(string $product) : Order
+    public function orderPizza(Pizza $pizza) : Order
     {
-        // créer une Order avec $product et soi-même en customer
-        // retourner l'Order créée
+        // créer un Order avec $pizza et soi-même en customer
+        // retourner l'Order créé
+    }
+
+    public function orderMenu(Pizza $pizza, Beverage $beverage) : Order
+    {
+        // créer un Menu avec $pizza et $beverage
+        // créer un Order avec le menu et soi-même en customer
+        // retourner l'Order créé
     }
 }

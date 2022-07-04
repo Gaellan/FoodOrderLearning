@@ -5,9 +5,9 @@ class Menu extends Product
     private Pizza $pizza;
     private Beverage $beverage;
 
-    public function __construct(float $price, Pizza $pizza, Beverage $beverage)
+    public function __construct(Pizza $pizza, Beverage $beverage)
     {
-        $this->price = $price;
+        $this->price = 10.00;
         $this->pizza = $pizza;
         $this->beverage = $beverage;
     }
@@ -18,14 +18,6 @@ class Menu extends Product
     public function getPrice(): float
     {
         return $this->price;
-    }
-
-    /**
-     * @param float $price
-     */
-    public function setPrice(float $price): void
-    {
-        $this->price = $price;
     }
 
     /**
