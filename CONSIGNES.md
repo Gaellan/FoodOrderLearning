@@ -11,6 +11,7 @@ Pour récupérer les fichers `git fetch & git checkout exo-1-classes`
 
 Initialisez les deux `Order` dans le fichier `index.php` et afficher les avec leur méthode `print()`.
 
+
 ### Exercice 2
 _Objectif : manipuler les classes, attributs et méthodes_
 
@@ -44,3 +45,41 @@ public function order(string $product) : Order
 ```
 Ensuite dans l'`index.php` , utilisez les nouvelles méthodes pour que `$jane` et `$joe` commande chacun `"Pizza+Bière"`. Utilisez ensuite les nouvelles méthodes du `Counter` pour ajouter ces commandes à sa liste et affichez le résultat.
 
+
+### Exercice 3
+_Objectif : Utiliser des classes abstraites et des classes héritées_
+
+Pour récupérer les fichers `git fetch & git checkout exo-3-heritage`
+
+Nous avons toute une série de nouvelles classes qui représentent les produits que l'on peut acheter.
+De plus la classe `Order` a été modifiée. Elle doit contenir un `Customer` et un `Product`.
+
+La conséquence c'est que l'on peut acheter une `Pizza` seule ou dans un `Menu` mais on ne peut pas acheter un `Beverage` seul, et c'est voulu.
+
+Dans la classe `Customer`, complétez les méthodes suivantes : 
+
+```php
+public function orderPizza(Pizza $pizza) : Order
+    {
+        // créer un Order avec $pizza et soi-même en customer
+        // retourner l'Order créé
+    }
+```
+```php
+public function orderMenu(Pizza $pizza, Beverage $beverage) : Order
+    {
+        // créer un Menu avec $pizza et $beverage
+        // créer un Order avec le menu et soi-même en customer
+        // retourner l'Order créé
+    }
+```
+
+Ensuite dans le fichier index.php faites en sorte que `$john` passe la commande suivante : 
+
+Un menu composé d'un demi et d'une pizza hawaienne.
+
+Et que `$jane` passe la commande suivante :
+
+Un menu composé d'une pizza savoyarde et d'un coca + 1 autre pizza savoyarde.
+
+N'hésitez pas à modifier les methodes `print` pour afficher le résultat.
