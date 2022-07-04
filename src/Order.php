@@ -4,12 +4,12 @@ class Order
 {
     private Customer $customer;
 
-    private string $product;
+    private array $products;
 
-    public function __construct(Customer $customer, string $product)
+    public function __construct(Customer $customer, array $products)
     {
         $this->customer = $customer;
-        $this->product = $product;
+        $this->products = $products;
     }
 
     /**
@@ -21,12 +21,34 @@ class Order
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getProduct(): string
+    public function getProducts(): array
     {
-        return $this->product;
+        return $this->products;
     }
+
+    /**
+     * @param array $products
+     */
+    private function setProducts(array $products): void
+    {
+        $this->products = $products;
+    }
+
+    /**
+     * @param Product $product
+     * @return array
+     */
+    public function addProduct(Product $product) : array
+    {
+        $products = $this->products;
+        $products[] = $product;
+        $this->setProducts($products);
+
+        return $this->getProducts();
+    }
+
 
     /**
      * @param Customer $customer
@@ -34,14 +56,6 @@ class Order
     public function setCustomer(Customer $customer): void
     {
         $this->customer = $customer;
-    }
-
-    /**
-     * @param string $product
-     */
-    public function setProduct(string $product): void
-    {
-        $this->product = $product;
     }
 
     public function print() : void
