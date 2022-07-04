@@ -100,7 +100,7 @@ public function addOrder(Order $order) : int
     }
 ```
 
-Dans la classe Customer, complétez les méthodes suivantes :
+Dans la classe `Customer`, complétez les méthodes suivantes :
 
 ```php
 private function lie() : Customer
