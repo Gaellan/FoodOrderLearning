@@ -9,4 +9,9 @@ $jane = new Customer("Jane", "Doe", 23);
 
 $counter = new Counter(true);
 
+$john->print();
+$jane->print();
+$counter->print();
+
+
 
