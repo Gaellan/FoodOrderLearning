@@ -67,6 +67,12 @@ class Customer
         echo "Je suis " . $this->firstName . " " . $this->lastName . " et j'ai " . $this->age . " ans. <br/> <br/>";
     }
 
+    private function lie() : Customer
+    {
+        // créer un Customer avec mes first et last name mais qui a 18 ans
+        // retourner le Customer généré
+    }
+
     public function orderPizza(Pizza $pizza) : Order
     {
         // créer un Order avec $pizza et soi-même en customer
@@ -76,6 +82,7 @@ class Customer
     public function orderMenu(Pizza $pizza, Beverage $beverage) : Order
     {
         // créer un Menu avec $pizza et $beverage
+        // si j'ai moins de 18 ans et que je veux un HardDrink, je dois mentir (lie)
         // créer un Order avec le menu et soi-même en customer
         // retourner l'Order créé
     }
