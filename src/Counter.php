@@ -65,18 +65,10 @@ class Counter
         $this->orders = $orders;
     }
 
-    public function addOrder(Order $order) :int {
-        if($order->getProduct() === "Pizza+Bière" && $order->getCustomer()->getAge() < 18)
-        {
-            return -1;
-        }
-        else
-        {
-            $orders = $this->getOrders();
-            $orders[] = $order;
-            $this->setOrders($orders);
-            return 1;
-        }
+    public function addOrder(Order $order) : int
+    {
+        // si un-e mineur-e essaie de commande Pizza+Bière, je ne fais rien et renvoie -1
+        // sinon j'ajoute l'$order à la liste des orders et je renvoie 1
     }
 
     public function print() : void
