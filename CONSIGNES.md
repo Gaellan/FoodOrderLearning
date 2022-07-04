@@ -83,3 +83,41 @@ Et que `$jane` passe la commande suivante :
 Un menu composé d'une pizza savoyarde et d'un coca + 1 autre pizza savoyarde.
 
 N'hésitez pas à modifier les methodes `print` pour afficher le résultat.
+
+
+### Exercice 4
+_Objectif : Réadapter le code_
+
+Pour récupérer les fichers `git fetch & git checkout exo-4-finalisation`
+
+Dans la classe `Counter`, completez la méthode suivante :
+
+```php
+public function addOrder(Order $order) : int
+    {
+        // si un-e mineur-e essaie de commander un HarDrink, je ne fais rien et renvoie -1
+        // sinon j'ajoute l'$order à la liste des orders et je renvoie 1
+    }
+```
+
+Dans la classe Customer, complétez les méthodes suivantes :
+
+```php
+private function lie() : Customer
+    {
+        // créer un Customer avec mes first et last name mais qui a 18 ans
+        // retourner le Customer généré
+    }
+```
+
+```php
+public function orderMenu(Pizza $pizza, Beverage $beverage) : Order
+    {
+        // créer un Menu avec $pizza et $beverage
+        // si j'ai moins de 18 ans et que je veux un HardDrink, je dois mentir (lie)
+        // créer un Order avec le menu et soi-même en customer
+        // retourner l'Order créé
+    }
+```
+
+Et faites donc en sorte que `$john` puisse commander sa bière malgré la sécurité renforcée du `Counter`.
