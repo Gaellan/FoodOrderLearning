@@ -1,13 +1,20 @@
-# Exercices sur les classes
+# Exercices de POO
+
+## Exercices sur les classes simples
+
+### Exercice 1
 _Objectif : manipuler les classes, attributs et méthodes_
 
-## Exercice 1
+Pour récupérer les fichers `git fetch & git checkout exo-1-classes`
 
 `$jane` et `$joe` vont chacun créer une commande (`Order`) pour le produit `"Pizza+Bière"`.
 
 Initialisez les deux `Order` dans le fichier `index.php` et afficher les avec leur méthode `print()`.
 
-## Exercice 2
+### Exercice 2
+_Objectif : manipuler les classes, attributs et méthodes_
+
+Pour récupérer les fichers `git fetch & git checkout exo-2-methods`
 
 Nous allons maintenant faire en sorte que notre classe `Counter` ne permette plus à une personne mineure de commander le produit `"Pizza+Bière"`.
 
