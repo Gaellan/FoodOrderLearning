@@ -60,9 +60,23 @@ class Counter
     /**
      * @param array $orders
      */
-    public function setOrders(array $orders): void
+    private function setOrders(array $orders): void
     {
         $this->orders = $orders;
+    }
+
+    public function addOrder(Order $order) :int {
+        if($order->getProduct() === "Pizza+Bière" && $order->getCustomer()->getAge() < 18)
+        {
+            return -1;
+        }
+        else
+        {
+            $orders = $this->getOrders();
+            $orders[] = $order;
+            $this->setOrders($orders);
+            return 1;
+        }
     }
 
     public function print() : void
