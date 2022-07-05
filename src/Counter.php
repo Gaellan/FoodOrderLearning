@@ -67,8 +67,17 @@ class Counter
 
     public function addOrder(Order $order) : int
     {
-        // si un-e mineur-e essaie de commande Pizza+Bière, je ne fais rien et renvoie -1
-        // sinon j'ajoute l'$order à la liste des orders et je renvoie 1
+        // si un-e mineur-e essaie de commander Pizza+Bière, je ne fais rien et renvoie -1
+        if($order->getCustomer()->getAge() < 18 && $order->getProduct() === "Pizza+Bière")
+        {
+            return -1;
+        }
+        else // sinon j'ajoute l'$order à la liste des orders et je renvoie 1
+        {
+            $this->orders[] = $order; // je rajoute à la fin du tableau
+            return 1;
+        }
+        
     }
 
     public function print() : void

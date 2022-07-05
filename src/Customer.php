@@ -70,6 +70,10 @@ class Customer
     public function order(string $product) : Order
     {
         // créer une Order avec $product et soi-même en customer
+        $order = new Order($this, $product);
+        //$order = new Order(new Customer($this->firstName, $this->lastName, $this->age), $product);
+        
         // retourner l'Order créée
+        return $order;
     }
 }
