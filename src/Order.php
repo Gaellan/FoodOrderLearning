@@ -60,6 +60,22 @@ class Order
 
     public function print() : void
     {
-        echo "Client : " . $this->customer->getFirstName() . " " . $this->customer->getLastName() . " a commandé " . $this->product . "<br/><br/>";
+        $productString = "";
+        
+        foreach($this->products as $product)
+        {
+            if($product instanceof Pizza)
+            {
+                $productString .= "une pizza ";
+            }
+            
+            if($product instanceof Menu)
+            {
+                $productString .= "un menu ";
+            }
+        }
+        
+        echo "Client : " . $this->customer->getFirstName() . " " . 
+        $this->customer->getLastName() . " a commandé " . $productString . "<br/><br/>";   
     }
 }

@@ -70,13 +70,20 @@ class Customer
     public function orderPizza(Pizza $pizza) : Order
     {
         // créer un Order avec $pizza et soi-même en customer
+        $order = new Order($this, [$pizza]);
         // retourner l'Order créé
+        return $order;
     }
 
     public function orderMenu(Pizza $pizza, Beverage $beverage) : Order
     {
         // créer un Menu avec $pizza et $beverage
+        $menu = new Menu($pizza, $beverage);
+        
         // créer un Order avec le menu et soi-même en customer
+        $order = new Order($this, [$menu]);
+        
         // retourner l'Order créé
+        return $order;
     }
 }
