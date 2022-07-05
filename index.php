@@ -24,9 +24,10 @@ $demi = new HardDrink(25, 5);
 $coca = new SoftDrink(33, "Coca-cola");
 $orangina = new SoftDrink(33, "Orangina");
 
-$john->print();
-$jane->print();
-$counter->print();
+$orderJohn = $john->orderMenu($hawaienne, $pinte);
+$resultJohn = $counter->addOrder($orderJohn);
+
+echo "Résultat John : " . $resultJohn . "<br><br>";
 
 
 

@@ -70,7 +70,9 @@ class Customer
     private function lie() : Customer
     {
         // créer un Customer avec mes first et last name mais qui a 18 ans
+        $fake = new Customer($this->firstName, $this->lastName, 18);
         // retourner le Customer généré
+        return $fake;
     }
 
     public function orderPizza(Pizza $pizza) : Order
@@ -82,8 +84,21 @@ class Customer
     public function orderMenu(Pizza $pizza, Beverage $beverage) : Order
     {
         // créer un Menu avec $pizza et $beverage
+        $menu = new Menu($pizza, $beverage);
+        
         // si j'ai moins de 18 ans et que je veux un HardDrink, je dois mentir (lie)
-        // créer un Order avec le menu et soi-même en customer
+        if($this->age < 18 && $beverage instanceof HardDrink)
+        {
+            $fake = $this->lie();
+            $order = new Order($fake, [$menu]);
+        }
+        else
+        {
+            // créer un Order avec le menu et soi-même en customer
+            $order = new Order($this, [$menu]);
+        }
         // retourner l'Order créé
+        
+        return $order;
     }
 }
